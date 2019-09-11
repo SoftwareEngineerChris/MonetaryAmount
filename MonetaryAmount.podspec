@@ -17,7 +17,7 @@ currency subtotal separate.
   s.author           = { 'SoftwareEngineerChris' => '4376956+SoftwareEngineerChris@users.noreply.github.com' }
   s.source           = { :git => 'https://github.com/SoftwareEngineerChris/MonetaryAmount.git', :tag => s.version.to_s }
 
-  s.dependency 'RoundedDecimal', '~> 1.1.0'
+  s.dependency 'RoundedDecimal', '~> 2.1.0'
 
   s.ios.deployment_target = '10.0'
   s.osx.deployment_target = '10.9'
