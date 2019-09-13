@@ -1,5 +1,10 @@
 # MonetaryAmount
 
+[![Build Status](https://app.bitrise.io/app/139ab4d0186f75f1/status.svg?token=reQDhmUgUHBYcE6TsRpr5w)](https://app.bitrise.io/app/139ab4d0186f75f1)
+[![Docs](docs/badge.svg)](https://softwareengineerchris.github.io/MonetaryAmount)
+[![Cocoapods](https://img.shields.io/cocoapods/v/MonetaryAmount)](https://cocoapods.org/pods/MonetaryAmount)
+[![SPM](https://img.shields.io/badge/SPM-Supported-informational)](#)
+
 A Swift representation of money / monetary amounts and _ISO 4217_ currency designations. Supports manipulation
 and combination of monetary amounts of a single currency or multiple currencies.
 
