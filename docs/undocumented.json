@@ -1,0 +1,19 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/firebase/projects/MonetaryAmount/Sources/MonetaryAmount/MonetaryAmount.swift",
+      "line": 60,
+      "symbol": "MonetaryAmount.init(currency:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/firebase/projects/MonetaryAmount/Sources/MonetaryAmount/MonetaryAmount.swift",
+      "line": 66,
+      "symbol": "MonetaryAmount.init(currency:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/firebase/projects/MonetaryAmount"
+}

@@ -11,6 +11,8 @@ import RoundedDecimal
 
 public extension Array where Element == MonetaryAmount {
     
+    // MARK: MonetaryAmount Consolidation
+    
     /// Consolidates `MonetaryAmount` values.
     ///
     /// `MonetaryAmount` values that have the _same_ `Currency` will be added
@@ -43,9 +45,47 @@ public extension Array where Element == MonetaryAmount {
             return result + [monetaryAmount]
         }
     }
+    
+    /// Consolidates a `MonetaryAmount` value with this `MonetaryAmount` array
+    ///
+    /// This is functionally equivalent of the `Array<MonetaryAmount>.consolidated()` instance method.
+    ///
+    /// See the documentation for the instance method `Array<MonetaryAmount>.consolidated()`
+    /// for more information.
+    func consolidating(_ monetaryAmount: MonetaryAmount) -> [MonetaryAmount] {
+        
+        return self | monetaryAmount
+    }
+    
+    /// Consolidates a `MonetaryAmount` value with this `MonetaryAmount` array.
+    /// This is an alias for the `consolidating(_:)` instance method.
+    ///
+    /// This is functionally equivalent of the `Array<MonetaryAmount>.consolidated()` instance method.
+    ///
+    /// See the documentation for the instance method `Array<MonetaryAmount>.consolidated()`
+    /// for more information.
+    func adding(_ monetaryAmount: MonetaryAmount) -> [MonetaryAmount] {
+        
+        return self.consolidating(monetaryAmount)
+    }
+    
+    // MARK: Consolidation Operator
+    
+    /// Consolidates two `MonetaryAmount` arrays
+    ///
+    /// This is functionally equivalent of the `Array<MonetaryAmount>.consolidated()` instance method.
+    ///
+    /// See the documentation for the instance method `Array<MonetaryAmount>.consolidated()`
+    /// for more information.
+    static func | (lhs: [MonetaryAmount], rhs: [MonetaryAmount]) -> [MonetaryAmount] {
+        
+        return (lhs + rhs).consolidated()
+    }
 }
 
 public extension MonetaryAmount {
+    
+    // MARK: Consolidation
     
     /// Consolidates two `MonetaryAmount` values
     ///
@@ -68,6 +108,8 @@ public extension MonetaryAmount {
         
         return self.consolidating(monetaryAmount)
     }
+    
+    // MARK: Consolidation Operator
     
     /// Consolidates two `MonetaryAmount` values
     ///
@@ -100,42 +142,5 @@ public extension MonetaryAmount {
     static func | (lhs: MonetaryAmount, rhs: [MonetaryAmount]) -> [MonetaryAmount] {
         
         return [lhs] | rhs
-    }
-}
-
-public extension Array where Element == MonetaryAmount {
-    
-    /// Consolidates two `MonetaryAmount` arrays
-    ///
-    /// This is functionally equivalent of the `Array<MonetaryAmount>.consolidated()` instance method.
-    ///
-    /// See the documentation for the instance method `Array<MonetaryAmount>.consolidated()`
-    /// for more information.
-    static func | (lhs: [MonetaryAmount], rhs: [MonetaryAmount]) -> [MonetaryAmount] {
-        
-        return (lhs + rhs).consolidated()
-    }
-    
-    /// Consolidates a `MonetaryAmount` value with this `MonetaryAmount` array
-    ///
-    /// This is functionally equivalent of the `Array<MonetaryAmount>.consolidated()` instance method.
-    ///
-    /// See the documentation for the instance method `Array<MonetaryAmount>.consolidated()`
-    /// for more information.
-    func consolidating(_ monetaryAmount: MonetaryAmount) -> [MonetaryAmount] {
-        
-        return self | monetaryAmount
-    }
-    
-    /// Consolidates a `MonetaryAmount` value with this `MonetaryAmount` array.
-    /// This is an alias for the `consolidating(_:)` instance method.
-    ///
-    /// This is functionally equivalent of the `Array<MonetaryAmount>.consolidated()` instance method.
-    ///
-    /// See the documentation for the instance method `Array<MonetaryAmount>.consolidated()`
-    /// for more information.
-    func adding(_ monetaryAmount: MonetaryAmount) -> [MonetaryAmount] {
-        
-        return self.consolidating(monetaryAmount)
     }
 }

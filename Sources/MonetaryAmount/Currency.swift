@@ -18,10 +18,12 @@ import Foundation
 /// - `Currencies.with(currencyCode:)`
 /// - `Currencies.GBP`, `Currencies.USD`, etc.
 ///
-/// # Reference
+/// - SeeAlso:
 ///    [Wikipedia Entry for ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)
 ///
 public struct Currency: Equatable, Hashable {
+    
+    // MARK: Currency Properties
     
     /// The English name of the currency. e.g. _Pound Sterling_
     public let name: String
@@ -35,10 +37,21 @@ public struct Currency: Equatable, Hashable {
     /// Illustrated by _£3.57_ and _$4.99_ - both currencies deal in **2** decimal places.
     public let minorUnit: Int16
     
+    // MARK: Internal and Private members
+    
     internal let formatter: NumberFormatter
     
     private let locale: Locale
     
+    // MARK: Construction
+    
+    ///
+    /// - parameters:
+    ///    - name: The descriptive name of the currency, e.g. US Dollar
+    ///    - code: An alpha identifier for the currency, e.g. USD
+    ///    - minorUnit: The number of decimal places used to represent the minor unit.
+    ///                 e.g. for USD, the `minorUnit` would be `2`
+    ///
     public init(name: String, code: String, minorUnit: Int16) {
         
         self.name = name

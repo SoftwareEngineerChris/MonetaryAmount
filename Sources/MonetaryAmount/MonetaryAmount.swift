@@ -47,11 +47,15 @@ import RoundedDecimal
 ///
 public struct MonetaryAmount: Equatable, Hashable, CustomStringConvertible {
     
+    // MARK: Properties
+    
     /// The currency represented by the `MonetaryAmount`. e.g. `Currency.USD`
     public let currency: Currency
     
     /// The value of the `MonetaryAmount` in the currency represented by `currency`
     public let value: DynamicRoundedDecimal
+    
+    // MARK: Construction
     
     public init(currency: Currency, value: Decimal) {
         
@@ -64,6 +68,8 @@ public struct MonetaryAmount: Equatable, Hashable, CustomStringConvertible {
         self.currency = currency
         self.value = value.with(scale: currency.minorUnit)
     }
+    
+    // MARK: CustomStringConvertible
     
     public var description: String {
         

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MonetaryAmount  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="MonetaryAmount  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">MonetaryAmount Docs</a> (98% documented)</p>
+        <p class="header-right"><a href="https://github.com/SoftwareEngineerChris/MonetaryAmount"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">MonetaryAmount Reference</a>
+        <img id="carat" src="img/carat.png" />
+        MonetaryAmount  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Decimal.html">Decimal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Double.html">Double</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/DynamicRoundedDecimal.html">DynamicRoundedDecimal</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Currency.html">Currency</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MonetaryAmount.html">MonetaryAmount</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='monetaryamount' class='heading'>MonetaryAmount</h1>
+
+<p>A Swift representation of money / monetary amounts and <em>ISO 4217</em> currency designations. Supports manipulation
+and combination of monetary amounts of a single currency or multiple currencies.</p>
+
+<p>Handles minor units (the exponent, e.g. cents for USD) for each currency as specified in the ISO 4217 standard.
+Simple manipulation includes consolidating / combining amounts.</p>
+
+<p><code><a href="Structs/MonetaryAmount.html">MonetaryAmount</a></code> values that have the <em>same</em> <code><a href="Structs/Currency.html">Currency</a></code> will be added together, <code><a href="Structs/MonetaryAmount.html">MonetaryAmount</a></code> values with 
+<em>unique</em> <code><a href="Structs/Currency.html">Currency</a></code> values will be added to the result on their own.</p>
+<h3 id='usage-example' class='heading'>Usage Example</h3>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">moneyA</span> <span class="o">=</span> <span class="mf">12.00</span><span class="o">.</span><span class="nf">in</span><span class="p">(</span><span class="o">.</span><span class="kt">USD</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">moneyB</span> <span class="o">=</span> <span class="mf">18.00</span><span class="o">.</span><span class="nf">in</span><span class="p">(</span><span class="o">.</span><span class="kt">USD</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">moneyC</span> <span class="o">=</span> <span class="mf">6.00</span><span class="o">.</span><span class="nf">in</span><span class="p">(</span><span class="o">.</span><span class="kt">GBP</span><span class="p">)</span>
+
+<span class="c1">// result would equal [30.00.in(.USD), 6.00.in(.GBP)]</span>
+<span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">moneyA</span><span class="p">,</span> <span class="n">moneyB</span><span class="p">,</span> <span class="n">moneyC</span><span class="p">]</span><span class="o">.</span><span class="nf">consolidating</span><span class="p">(</span><span class="n">moneyB</span><span class="p">)</span>
+</code></pre>
+
+<p>The underlying value for the amount is represented by a <code>DynamicRoundedDecimal</code> which
+itself uses the Swift <code>Decimal</code> type. <code>DynamicRoundedDecimal</code> handles rounding internally
+as declared by the given currency&rsquo;s <code>minorUnit</code>.</p>
+<h3 id='construction' class='heading'>Construction</h3>
+<pre class="highlight swift"><code><span class="c1">// moneyA and moneyB are equal and represent US$28.53</span>
+<span class="k">let</span> <span class="nv">moneyA</span> <span class="o">=</span> <span class="kt">MonetaryAmount</span><span class="p">(</span><span class="nv">currency</span><span class="p">:</span> <span class="kt">Currency</span><span class="o">.</span><span class="kt">USD</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Decimal</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"28.529372"</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">moneyB</span> <span class="o">=</span> <span class="mf">28.53</span><span class="o">.</span><span class="nf">in</span><span class="p">(</span><span class="o">.</span><span class="kt">USD</span><span class="p">)</span>
+</code></pre>
+<h4 id='note' class='heading'>Note</h4>
+
+<p><code><a href="Structs/MonetaryAmount.html">MonetaryAmount</a></code> does not do any FX or conversion of currencies, it keeps each individual
+currency subtotal separate.</p>
+<h4 id='see-also' class='heading'>See Also</h4>
+
+<p><a href="https://en.wikipedia.org/wiki/ISO_4217">Wikipedia Entry for ISO 4217</a></p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://github.com/SoftwareEngineerChris/MonetaryAmount" target="_blank" rel="external">SoftwareEngineerChris</a>. All rights reserved. (Last updated: 2019-09-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

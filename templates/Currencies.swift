@@ -22,6 +22,8 @@ import Foundation
 // File last generated: {{ generatedDate }}
 public extension Currency {
 
+    // MARK: Requesting Currencies
+    
     /// Request a currency for a given _ISO 4217_ currency code.
     ///
     /// For example, to obtain the UK Pound:
@@ -38,15 +40,19 @@ public extension Currency {
     static func with(currencyCode: String) -> Currency? {
         return currencyTable[currencyCode]
     }
-    {% for currency in currencies %}
-    /// {{ currency.currencyName }} ({{ currency.alphaCurrencyCode }}) with minor unit {{ currency.minorUnit }}
-    static let {{ currency.alphaCurrencyCode }} = Currency(name: "{{ currency.currencyName }}", code: "{{ currency.alphaCurrencyCode }}", minorUnit: {{ currency.minorUnit }})
-    {% endfor %}
+    
+    // MARK: All Currencies
     
     /// All standard `Currency` values defined by _ISO 4217_
     static let all: [Currency] = [{% for currency in currencies %}
         {{ currency.alphaCurrencyCode }},{% endfor %}
     ]
+        
+    // MARK: Individual Currencies
+    {% for currency in currencies %}
+    /// {{ currency.currencyName }} ({{ currency.alphaCurrencyCode }}) with minor unit {{ currency.minorUnit }}
+    static let {{ currency.alphaCurrencyCode }} = Currency(name: "{{ currency.currencyName }}", code: "{{ currency.alphaCurrencyCode }}", minorUnit: {{ currency.minorUnit }})
+    {% endfor %}
     
     static private let currencyTable: [String: Currency] = [{% for currency in currencies %}
         {{ currency.alphaCurrencyCode }}.code: {{ currency.alphaCurrencyCode }}, {% endfor %}

@@ -11,6 +11,8 @@ import RoundedDecimal
 
 public extension Double {
     
+    // MARK: Double to MonetaryAmount
+    
     /// Constructs a `MonetaryAmount` from a `Double` with a given `Currency`
     ///
     /// Example:
@@ -28,6 +30,8 @@ public extension Double {
 }
 
 public extension Decimal {
+    
+    // MARK: Decimal to MonetaryAmount
     
     /// Constructs a `MonetaryAmount` from a `Decimal` with a given `Currency`
     ///
@@ -47,6 +51,8 @@ public extension Decimal {
 
 public extension DynamicRoundedDecimal {
 
+    // MARK: DynamicRoundedDecimal to MonetaryAmount
+    
     /// Constructs a `MonetaryAmount` from a `DynamicRoundedDecimal` with a given `Currency`
     ///
     /// Example:

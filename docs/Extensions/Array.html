@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array Extension Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Extension/Array" class="dashAnchor"></a>
+    <a title="Array Extension Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">MonetaryAmount Docs</a> (98% documented)</p>
+        <p class="header-right"><a href="https://github.com/SoftwareEngineerChris/MonetaryAmount"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">MonetaryAmount Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Array Extension Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Decimal.html">Decimal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Double.html">Double</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/DynamicRoundedDecimal.html">DynamicRoundedDecimal</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Currency.html">Currency</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MonetaryAmount.html">MonetaryAmount</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Array</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Array</span> <span class="k">where</span> <span class="kt">Element</span> <span class="o">==</span> <span class="kt"><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></span></code></pre>
+
+                </div>
+              </div>
+            
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/MonetaryAmount%20Consolidation"></a>
+                <a name="//apple_ref/swift/Section/MonetaryAmount Consolidation" class="dashAnchor"></a>
+                <a href="#/MonetaryAmount%20Consolidation">
+                  <h3 class="section-name">MonetaryAmount Consolidation</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sa14MonetaryAmountA2AVRszlE12consolidatedSayABGyF"></a>
+                    <a name="//apple_ref/swift/Method/consolidated()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sa14MonetaryAmountA2AVRszlE12consolidatedSayABGyF">consolidated()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Consolidates <code><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></code> values.</p>
+
+<p><code><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></code> values that have the <em>same</em> <code><a href="../Structs/Currency.html">Currency</a></code> will be added
+together, <code><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></code> values with <em>unique</em> <code><a href="../Structs/Currency.html">Currency</a></code> values
+will be added to the result on their own.</p>
+<h2 id='example' class='heading'>Example</h2>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">moneyA</span> <span class="o">=</span> <span class="mf">12.00</span><span class="o">.</span><span class="nf">in</span><span class="p">(</span><span class="o">.</span><span class="kt">USD</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">moneyB</span> <span class="o">=</span> <span class="mf">18.00</span><span class="o">.</span><span class="nf">in</span><span class="p">(</span><span class="o">.</span><span class="kt">USD</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">moneyC</span> <span class="o">=</span> <span class="mf">6.00</span><span class="o">.</span><span class="nf">in</span><span class="p">(</span><span class="o">.</span><span class="kt">GBP</span><span class="p">)</span>
+
+<span class="c1">// result would equal [30.00.in(.USD), 6.00.in(.GBP)]</span>
+<span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">moneyA</span><span class="p">,</span> <span class="n">moneyB</span><span class="p">,</span> <span class="n">moneyC</span><span class="p">]</span><span class="o">.</span><span class="nf">consolidating</span><span class="p">(</span><span class="n">moneyB</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">consolidated</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The a consolidated array of <code><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></code> values</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sa14MonetaryAmountA2AVRszlE13consolidatingySayABGABF"></a>
+                    <a name="//apple_ref/swift/Method/consolidating(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sa14MonetaryAmountA2AVRszlE13consolidatingySayABGABF">consolidating(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Consolidates a <code><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></code> value with this <code><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></code> array</p>
+
+<p>This is functionally equivalent of the <code><a href="../Extensions/Array.html#/s:Sa14MonetaryAmountA2AVRszlE12consolidatedSayABGyF">Array&lt;MonetaryAmount&gt;.consolidated()</a></code> instance method.</p>
+
+<p>See the documentation for the instance method <code><a href="../Extensions/Array.html#/s:Sa14MonetaryAmountA2AVRszlE12consolidatedSayABGyF">Array&lt;MonetaryAmount&gt;.consolidated()</a></code>
+for more information.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">consolidating</span><span class="p">(</span><span class="n">_</span> <span class="nv">monetaryAmount</span><span class="p">:</span> <span class="kt"><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sa14MonetaryAmountA2AVRszlE6addingySayABGABF"></a>
+                    <a name="//apple_ref/swift/Method/adding(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sa14MonetaryAmountA2AVRszlE6addingySayABGABF">adding(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Consolidates a <code><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></code> value with this <code><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></code> array.
+This is an alias for the <code><a href="../Extensions/Array.html#/s:Sa14MonetaryAmountA2AVRszlE13consolidatingySayABGABF">consolidating(_:)</a></code> instance method.</p>
+
+<p>This is functionally equivalent of the <code><a href="../Extensions/Array.html#/s:Sa14MonetaryAmountA2AVRszlE12consolidatedSayABGyF">Array&lt;MonetaryAmount&gt;.consolidated()</a></code> instance method.</p>
+
+<p>See the documentation for the instance method <code><a href="../Extensions/Array.html#/s:Sa14MonetaryAmountA2AVRszlE12consolidatedSayABGyF">Array&lt;MonetaryAmount&gt;.consolidated()</a></code>
+for more information.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">adding</span><span class="p">(</span><span class="n">_</span> <span class="nv">monetaryAmount</span><span class="p">:</span> <span class="kt"><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Consolidation%20Operator"></a>
+                <a name="//apple_ref/swift/Section/Consolidation Operator" class="dashAnchor"></a>
+                <a href="#/Consolidation%20Operator">
+                  <h3 class="section-name">Consolidation Operator</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sa14MonetaryAmountA2AVRszlE1ooiySayABGAD_ADtFZ"></a>
+                    <a name="//apple_ref/swift/Method/|(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sa14MonetaryAmountA2AVRszlE1ooiySayABGAD_ADtFZ">|(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Consolidates two <code><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></code> arrays</p>
+
+<p>This is functionally equivalent of the <code><a href="../Extensions/Array.html#/s:Sa14MonetaryAmountA2AVRszlE12consolidatedSayABGyF">Array&lt;MonetaryAmount&gt;.consolidated()</a></code> instance method.</p>
+
+<p>See the documentation for the instance method <code><a href="../Extensions/Array.html#/s:Sa14MonetaryAmountA2AVRszlE12consolidatedSayABGyF">Array&lt;MonetaryAmount&gt;.consolidated()</a></code>
+for more information.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">|</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></span><span class="p">],</span> <span class="nv">rhs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/MonetaryAmount%20Negation"></a>
+                <a name="//apple_ref/swift/Section/MonetaryAmount Negation" class="dashAnchor"></a>
+                <a href="#/MonetaryAmount%20Negation">
+                  <h3 class="section-name">MonetaryAmount Negation</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sa14MonetaryAmountA2AVRszlE7negatedSayABGyF"></a>
+                    <a name="//apple_ref/swift/Method/negated()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sa14MonetaryAmountA2AVRszlE7negatedSayABGyF">negated()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">negated</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new <code><a href="../Structs/MonetaryAmount.html">MonetaryAmount</a></code> array where all elements have been negated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://github.com/SoftwareEngineerChris/MonetaryAmount" target="_blank" rel="external">SoftwareEngineerChris</a>. All rights reserved. (Last updated: 2019-09-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

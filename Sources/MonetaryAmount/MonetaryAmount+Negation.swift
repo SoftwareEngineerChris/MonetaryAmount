@@ -10,6 +10,8 @@ import Foundation
 
 public extension MonetaryAmount {
     
+    // MARK: Negation
+    
     /// If the current value is positive, a new `MonetaryAmount` is returned
     /// with the negative value. If the current value is negative, a new
     /// `MonetaryAmount` is returned with a positive value.
@@ -40,6 +42,8 @@ public extension MonetaryAmount {
 }
 
 public extension Array where Element == MonetaryAmount {
+    
+    // MARK: MonetaryAmount Negation
     
     /// - returns: A new `MonetaryAmount` array where all elements have been negated.
     func negated() -> [MonetaryAmount] {
