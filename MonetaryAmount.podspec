@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MonetaryAmount'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'A Swift representation of Money and ISO 4217 Currencies and the manipulation of them'
 
   s.description      = <<-DESC
@@ -17,7 +17,7 @@ currency subtotal separate.
   s.author           = { 'SoftwareEngineerChris' => '4376956+SoftwareEngineerChris@users.noreply.github.com' }
   s.source           = { :git => 'https://github.com/SoftwareEngineerChris/MonetaryAmount.git', :tag => s.version.to_s }
 
-  s.dependency 'RoundedDecimal', '~> 2.1.0'
+  s.dependency 'RoundedDecimal', '~> 2.2.0'
 
   s.ios.deployment_target = '10.0'
   s.osx.deployment_target = '10.9'
