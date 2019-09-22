@@ -277,6 +277,313 @@ currency subtotal separate.</p>
             </div>
             <div class="task-group">
               <div class="task-name-container">
+                <a name="/Division"></a>
+                <a name="//apple_ref/swift/Section/Division" class="dashAnchor"></a>
+                <a href="#/Division">
+                  <h3 class="section-name">Division</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14MonetaryAmountAAV1doiyA2B_So9NSDecimalatFZ"></a>
+                    <a name="//apple_ref/swift/Method//(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14MonetaryAmountAAV1doiyA2B_So9NSDecimalatFZ">/(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Divides a <code>MonetaryAmount</code> by a <code>Decimal</code> value.</p>
+
+<p>No rounding is done on the denominator prior to the calculation.</p>
+
+<p>Rounding of the result will occur during the construction of the new
+<code>MonetaryAmount</code> value with respect to its <code><a href="../Structs/Currency.html">Currency</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">/</span> <span class="p">(</span><span class="nv">monetaryAmount</span><span class="p">:</span> <span class="kt">MonetaryAmount</span><span class="p">,</span> <span class="nv">denominator</span><span class="p">:</span> <span class="kt">Decimal</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MonetaryAmount</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14MonetaryAmountAAV1doiyA2B_SitFZ"></a>
+                    <a name="//apple_ref/swift/Method//(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14MonetaryAmountAAV1doiyA2B_SitFZ">/(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Divides a <code>MonetaryAmount</code> by an <code>Int</code> value.</p>
+
+<p>Rounding of the result will occur during the construction of the new
+<code>MonetaryAmount</code> value with respect to its <code><a href="../Structs/Currency.html">Currency</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">/</span> <span class="p">(</span><span class="nv">monetaryAmount</span><span class="p">:</span> <span class="kt">MonetaryAmount</span><span class="p">,</span> <span class="nv">denominator</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MonetaryAmount</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14MonetaryAmountAAV1doiyA2B_14RoundedDecimal07DynamiccD0VtFZ"></a>
+                    <a name="//apple_ref/swift/Method//(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14MonetaryAmountAAV1doiyA2B_14RoundedDecimal07DynamiccD0VtFZ">/(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Divides a <code>MonetaryAmount</code> by an <code>DynamicRoundedDecimal</code> value.</p>
+
+<p>No rounding is done on the denominator prior to the calculation - since it is a <code>DynamicRoundedDecimal</code>
+it has already been rounded.</p>
+
+<p>Rounding of the result will occur during the construction of the new
+<code>MonetaryAmount</code> value with respect to its <code><a href="../Structs/Currency.html">Currency</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">/</span> <span class="p">(</span><span class="nv">monetaryAmount</span><span class="p">:</span> <span class="kt">MonetaryAmount</span><span class="p">,</span> <span class="nv">denominator</span><span class="p">:</span> <span class="kt">DynamicRoundedDecimal</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MonetaryAmount</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Multiplication"></a>
+                <a name="//apple_ref/swift/Section/Multiplication" class="dashAnchor"></a>
+                <a href="#/Multiplication">
+                  <h3 class="section-name">Multiplication</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14MonetaryAmountAAV1moiyA2B_So9NSDecimalatFZ"></a>
+                    <a name="//apple_ref/swift/Method/*(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14MonetaryAmountAAV1moiyA2B_So9NSDecimalatFZ">*(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Multiplies a <code>MonetaryAmount</code> by a <code>Decimal</code> value.</p>
+
+<p>No rounding is done on the coefficient prior to the calculation.</p>
+
+<p>Rounding of the result will occur during the construction of the new
+<code>MonetaryAmount</code> value with respect to its <code><a href="../Structs/Currency.html">Currency</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">*</span> <span class="p">(</span><span class="nv">monetaryAmount</span><span class="p">:</span> <span class="kt">MonetaryAmount</span><span class="p">,</span> <span class="nv">coefficient</span><span class="p">:</span> <span class="kt">Decimal</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MonetaryAmount</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14MonetaryAmountAAV1moiyA2B_SitFZ"></a>
+                    <a name="//apple_ref/swift/Method/*(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14MonetaryAmountAAV1moiyA2B_SitFZ">*(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Multiplies a <code>MonetaryAmount</code> by an <code>Int</code> value.</p>
+
+<p>Rounding of the result will occur during the construction of the new
+<code>MonetaryAmount</code> value with respect to its <code><a href="../Structs/Currency.html">Currency</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">*</span> <span class="p">(</span><span class="nv">monetaryAmount</span><span class="p">:</span> <span class="kt">MonetaryAmount</span><span class="p">,</span> <span class="nv">coefficient</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MonetaryAmount</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14MonetaryAmountAAV1moiyA2B_14RoundedDecimal07DynamiccD0VtFZ"></a>
+                    <a name="//apple_ref/swift/Method/*(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14MonetaryAmountAAV1moiyA2B_14RoundedDecimal07DynamiccD0VtFZ">*(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Multiplies a <code>MonetaryAmount</code> by an <code>DynamicRoundedDecimal</code> value.</p>
+
+<p>No rounding is done on the coefficient prior to the calculation - since it is a <code>DynamicRoundedDecimal</code>
+it has already been rounded.</p>
+
+<p>Rounding of the result will occur during the construction of the new
+<code>MonetaryAmount</code> value with respect to its <code><a href="../Structs/Currency.html">Currency</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">*</span> <span class="p">(</span><span class="nv">monetaryAmount</span><span class="p">:</span> <span class="kt">MonetaryAmount</span><span class="p">,</span> <span class="nv">coefficient</span><span class="p">:</span> <span class="kt">DynamicRoundedDecimal</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MonetaryAmount</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14MonetaryAmountAAV1moiyABSo9NSDecimala_ABtFZ"></a>
+                    <a name="//apple_ref/swift/Method/*(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14MonetaryAmountAAV1moiyABSo9NSDecimala_ABtFZ">*(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Multiplies a <code>MonetaryAmount</code> by a <code>Decimal</code> value.</p>
+
+<p>No rounding is done on the coefficient prior to the calculation.</p>
+
+<p>Rounding of the result will occur during the construction of the new
+<code>MonetaryAmount</code> value with respect to its <code><a href="../Structs/Currency.html">Currency</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">*</span> <span class="p">(</span><span class="nv">coefficient</span><span class="p">:</span> <span class="kt">Decimal</span><span class="p">,</span> <span class="nv">monetaryAmount</span><span class="p">:</span> <span class="kt">MonetaryAmount</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MonetaryAmount</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14MonetaryAmountAAV1moiyABSi_ABtFZ"></a>
+                    <a name="//apple_ref/swift/Method/*(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14MonetaryAmountAAV1moiyABSi_ABtFZ">*(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Multiplies a <code>MonetaryAmount</code> by an <code>Int</code> value.</p>
+
+<p>Rounding of the result will occur during the construction of the new
+<code>MonetaryAmount</code> value with respect to its <code><a href="../Structs/Currency.html">Currency</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">*</span> <span class="p">(</span><span class="nv">coefficient</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">monetaryAmount</span><span class="p">:</span> <span class="kt">MonetaryAmount</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MonetaryAmount</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14MonetaryAmountAAV1moiyAB14RoundedDecimal07DynamiccD0V_ABtFZ"></a>
+                    <a name="//apple_ref/swift/Method/*(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14MonetaryAmountAAV1moiyAB14RoundedDecimal07DynamiccD0V_ABtFZ">*(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Multiplies a <code>MonetaryAmount</code> by an <code>DynamicRoundedDecimal</code> value.</p>
+
+<p>No rounding is done on the coefficient prior to the calculation - since it is a <code>DynamicRoundedDecimal</code>
+it has already been rounded.</p>
+
+<p>Rounding of the result will occur during the construction of the new
+<code>MonetaryAmount</code> value with respect to its <code><a href="../Structs/Currency.html">Currency</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">*</span> <span class="p">(</span><span class="nv">coefficient</span><span class="p">:</span> <span class="kt">DynamicRoundedDecimal</span><span class="p">,</span> <span class="nv">monetaryAmount</span><span class="p">:</span> <span class="kt">MonetaryAmount</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MonetaryAmount</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
                 <a name="/Consolidation"></a>
                 <a name="//apple_ref/swift/Section/Consolidation" class="dashAnchor"></a>
                 <a href="#/Consolidation">
@@ -542,7 +849,7 @@ equivalent to the instance method <code><a href="../Structs/MonetaryAmount.html#
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://github.com/SoftwareEngineerChris/MonetaryAmount" target="_blank" rel="external">SoftwareEngineerChris</a>. All rights reserved. (Last updated: 2019-09-14)</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/SoftwareEngineerChris/MonetaryAmount" target="_blank" rel="external">SoftwareEngineerChris</a>. All rights reserved. (Last updated: 2019-09-22)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

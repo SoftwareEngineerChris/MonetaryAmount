@@ -14,6 +14,20 @@ Simple manipulation includes consolidating / combining amounts.
 `MonetaryAmount` values that have the _same_ `Currency` will be added together, `MonetaryAmount` values with 
 _unique_ `Currency` values will be added to the result on their own.
 
+## Installation
+
+### Cocoapods
+```ruby
+pod 'MonetaryAmount', '~> 1.1.0'
+```
+
+### Swift Package Manager
+```swift
+dependencies: [
+   .package(url: "https://github.com/SoftwareEngineerChris/MonetaryAmount.git", from: "1.1.0")
+]
+```
+
 ### Usage Example
 
 ```swift

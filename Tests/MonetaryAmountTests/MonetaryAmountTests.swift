@@ -189,6 +189,81 @@ final class MonetaryAmountTests: XCTestCase {
         XCTAssertEqual(result.first, 0.00.in(USD))
         XCTAssertEqual(result.last, 20.96.in(GBP))
     }
+    
+    // MARK: Arithmetic
+    
+    // MARK: Division
+    
+    func test_dividingMonetaryAmountByInt_dividesCorrectly() {
+        
+        let money1 = 100.in(USD)
+        
+        let result = money1 / 3
+        
+        XCTAssertEqual(result, 33.33.in(USD))
+    }
+    
+    func test_dividingMonetaryAmountByDecimal_dividesCorrectly() {
+        
+        let money1 = 100.in(USD)
+        
+        let result = money1 / 3.3
+        
+        XCTAssertEqual(result, 30.30.in(USD))
+    }
+    
+    func test_dividingMonetaryAmountByDynamicRoundedDecimal_dividesCorrectly() {
+        
+        let money1 = 100.in(USD)
+        
+        let result = money1 / DynamicRoundedDecimal(value: 3.333, scale: 1)
+        
+        XCTAssertEqual(result, 30.30.in(USD))
+    }
+    
+    // MARK: Multiplication
+    
+    func test_multiplyingMonetaryAmountByInt_multipliesCorrectly() {
+        
+        let money1 = 25.25.in(USD)
+        
+        let result = money1 * 4
+        
+        XCTAssertEqual(result, 101.00.in(USD))
+    }
+    
+    func test_multiplyingMonetaryAmountByDecimal_multipliesCorrectly() {
+        
+        let money1 = 25.50.in(USD)
+        
+        let result = money1 * 2.5
+        
+        XCTAssertEqual(result, 63.75.in(USD))
+    }
+    
+    func test_multiplyingMonetaryAmountByDynamicRoundedDecimal_multipliesCorrectly() {
+        
+        let money1 = 25.50.in(USD)
+        
+        let result = money1 * DynamicRoundedDecimal(value: 2.543, scale: 1)
+        
+        XCTAssertEqual(result, 63.75.in(USD))
+    }
+    
+    func test_multiplyingMonetaryAmountReversingOrder_multipliesCorrectly() {
+        
+        let money1 = 25.50.in(USD)
+        
+        let result1 = money1 * 2.5
+        
+        let result2 = 2.5 * money1
+        
+        let result3 = DynamicRoundedDecimal(value: 2.543, scale: 1) * money1
+        
+        XCTAssertEqual(result1, 63.75.in(USD))
+        XCTAssertEqual(result2, 63.75.in(USD))
+        XCTAssertEqual(result3, 63.75.in(USD))
+    }
 
     // MARK: Linux Test Support
     
@@ -207,6 +282,13 @@ final class MonetaryAmountTests: XCTestCase {
         ("test_consolidatingFunction_sameCurrency_returnsConsolidatedValue", test_consolidatingFunction_sameCurrency_returnsConsolidatedValue),
         ("test_consolidatingFunctionMultiple_sameCurrency_returnsConsolidatedValue", test_consolidatingFunctionMultiple_sameCurrency_returnsConsolidatedValue),
         ("test_consolidationOperator_multipleCurrencies_returnsConsolidatedValues", test_consolidationOperator_multipleCurrencies_returnsConsolidatedValues),
-        ("test_consolidationOperator_multipleCurrencies_netZero_returnsConsolidatedValues", test_consolidationOperator_multipleCurrencies_netZero_returnsConsolidatedValues)
+        ("test_consolidationOperator_multipleCurrencies_netZero_returnsConsolidatedValues", test_consolidationOperator_multipleCurrencies_netZero_returnsConsolidatedValues),
+        ("test_dividingMonetaryAmountByInt_dividesCorrectly", test_dividingMonetaryAmountByInt_dividesCorrectly),
+        ("test_dividingMonetaryAmountByDecimal_dividesCorrectly", test_dividingMonetaryAmountByDecimal_dividesCorrectly),
+        ("test_dividingMonetaryAmountByDynamicRoundedDecimal_dividesCorrectly", test_dividingMonetaryAmountByDynamicRoundedDecimal_dividesCorrectly),
+        ("test_multiplyingMonetaryAmountByInt_multipliesCorrectly", test_multiplyingMonetaryAmountByInt_multipliesCorrectly),
+        ("test_multiplyingMonetaryAmountByDecimal_multipliesCorrectly", test_multiplyingMonetaryAmountByDecimal_multipliesCorrectly),
+        ("test_multiplyingMonetaryAmountByDynamicRoundedDecimal_multipliesCorrectly", test_multiplyingMonetaryAmountByDynamicRoundedDecimal_multipliesCorrectly),
+        ("test_multiplyingMonetaryAmountReversingOrder_multipliesCorrectly", test_multiplyingMonetaryAmountReversingOrder_multipliesCorrectly)
     ]
 }
