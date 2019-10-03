@@ -2,7 +2,6 @@
 
 [![Build Status](https://app.bitrise.io/app/139ab4d0186f75f1/status.svg?token=reQDhmUgUHBYcE6TsRpr5w)](https://app.bitrise.io/app/139ab4d0186f75f1)
 [![Docs](https://softwareengineerchris.github.io/MonetaryAmount/badge.svg)](https://softwareengineerchris.github.io/MonetaryAmount)
-[![Cocoapods](https://img.shields.io/cocoapods/v/MonetaryAmount)](https://cocoapods.org/pods/MonetaryAmount)
 [![SPM](https://img.shields.io/badge/SPM-Supported-informational)](#)
 
 A Swift representation of money / monetary amounts and _ISO 4217_ currency designations. Supports manipulation
@@ -15,11 +14,6 @@ Simple manipulation includes consolidating / combining amounts.
 _unique_ `Currency` values will be added to the result on their own.
 
 ## Installation
-
-### Cocoapods
-```ruby
-pod 'MonetaryAmount', '~> 1.1.0'
-```
 
 ### Swift Package Manager
 ```swift
