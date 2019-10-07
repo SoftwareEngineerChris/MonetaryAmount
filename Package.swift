@@ -16,12 +16,13 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/SoftwareEngineerChris/RoundedDecimal.git", from: "2.1.0"),
+        .package(url: "https://github.com/SoftwareEngineerChris/Consolidate.git", from: "1.0.0"),
         .package(url: "https://github.com/stencilproject/Stencil.git", from: "0.13.0")
     ],
     targets: [
         .target(
             name: "MonetaryAmount",
-            dependencies: ["RoundedDecimal"]),
+            dependencies: ["RoundedDecimal", "Consolidate"]),
         .testTarget(
             name: "MonetaryAmountTests",
             dependencies: ["MonetaryAmount"]),

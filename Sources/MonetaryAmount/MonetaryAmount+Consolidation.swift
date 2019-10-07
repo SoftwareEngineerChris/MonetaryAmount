@@ -8,6 +8,7 @@
 
 import Foundation
 import RoundedDecimal
+import Consolidate
 
 public extension Array where Element == MonetaryAmount {
     
@@ -32,18 +33,7 @@ public extension Array where Element == MonetaryAmount {
     ///   The a consolidated array of `MonetaryAmount` values
     func consolidated() -> [MonetaryAmount] {
         
-        return reduce([]) { (result, monetaryAmount) -> [MonetaryAmount] in
-            
-            if let existingCurrencyAmountIndex = result.firstIndex(where: { $0.currency == monetaryAmount.currency }) {
-                var mutableResult = result
-                let existingCurrencyAmount = mutableResult.remove(at: existingCurrencyAmountIndex)
-                let replacementAmount = (existingCurrencyAmount.value + monetaryAmount.value).in(monetaryAmount.currency)
-                
-                return mutableResult + [replacementAmount]
-            }
-            
-            return result + [monetaryAmount]
-        }
+        return consolidated(by: \.currency) { ($0.value + $1.value).in($0.currency) }
     }
     
     /// Consolidates a `MonetaryAmount` value with this `MonetaryAmount` array
